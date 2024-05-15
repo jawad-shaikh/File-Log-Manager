@@ -1,7 +1,7 @@
 {
-    "name": "file-logger",
+    "name": "file-log-manager",
     "version": "1.0.0",
-    "description": "file-logger is a lightweight logging utility for Node.js. It automatically creates and manages log files with timestamps, ensuring organized and accessible logs.",
+    "description": "file-log-manager is a lightweight logging utility for Node.js. It automatically creates and manages log files with timestamps, ensuring organized and accessible logs.",
     "main": "index.js",
     "keywords": ["logger", "file", "nodejs"],
     "author": "Jawad Shaikh",

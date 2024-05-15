@@ -1,6 +1,6 @@
-# File-Logger
+# File-Log-Manager
 
-`File-Logger` is a lightweight, easy-to-use logging utility for Node.js applications. Designed to simplify logging by automatically creating and managing log files with timestamps, this tool ensures your logs are well-organized and accessible.
+`file-log-manager` is a lightweight, easy-to-use logging utility for Node.js applications. Designed to simplify logging by automatically creating and managing log files with timestamps, this tool ensures your logs are well-organized and accessible.
 
 #### Features
 
@@ -13,17 +13,17 @@
 Install the package using npm:
 
 ```bash
-npm install my-file-logger
+npm install file-log-manager
 ```
 
 #### Usage
 
-Here's how to integrate my-file-logger into your Node.js application:
+Here's how to integrate `file-log-manager` into your Node.js application:
 
 - Require the Module:
 
 ```javascript
-const fileLogger = require('my-file-logger');
+const fileLogger = require('file-log-manager');
 ```
 
 - Log Messages:
@@ -39,7 +39,7 @@ fileLogger('errors', 'An unexpected error occurred.');
 #### Example
 
 ```javascript   
-const fileLogger = require('my-file-logger');
+const fileLogger = require('file-log-manager');
 
 fileLogger('server', 'Server is up and running.');
 fileLogger('database', 'Database connection established.');
@@ -49,7 +49,7 @@ fileLogger('errors', 'Failed to fetch user data.');
 
 #### How It Works
 
-`my-file-logger` takes care of the following tasks:
+`file-log-manager` takes care of the following tasks:
 
 - Directory Management: Creates a directory named after the specified log name inside a logs folder.
 - File Naming: Generates a log file with the current date (formatted as YYYY-MM-DD.log).
