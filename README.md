@@ -1,12 +1,13 @@
 # File-Log-Manager
 
-`file-log-manager` is a lightweight, easy-to-use logging utility for Node.js applications. Designed to simplify logging by automatically creating and managing log files with timestamps, this tool ensures your logs are well-organized and accessible.
+`file-log-manager` is a customizable, easy-to-use logging utility for Node.js applications. This utility is designed to allow dynamic path configurations for logs, ensuring that your logging structure is as flexible as needed for various environments and scenarios.
 
 #### Features
 
-- Automatic Directory and File Creation: Automatically organizes logs into directories and files based on custom log names and current dates.
+- Configurable Path for Logs: You can specify a custom path for log directories, facilitating integration into diverse environments or complex file hierarchies.
+- Automatic Directory and File Creation: Automatically organizes logs into directories and files based on custom log names and the current date.
 - Timestamped Logs: Each log entry is prepended with a precise timestamp, making it easy to track events chronologically.
-- Simple API: Minimal setup and easy-to-use function for logging messages.
+- Simple API: Easy to set up and use, with minimal configuration needed to start logging messages.
 
 #### Installation
 
@@ -16,42 +17,36 @@ Install the package using npm:
 npm install file-log-manager
 ```
 
-#### Usage
+#### Configuration
 
-Here's how to integrate `file-log-manager` into your Node.js application:
+Here's how to integrate `file-log-manager` into your Node.js application and configure it:
 
 - Require the Module:
 
 ```javascript
-const fileLogger = require('file-log-manager');
+const path = require('path');
+const fileLogManager = require('file-log-manager');
 ```
 
-- Log Messages:
+- Configure and Use the Logger:
 
 ```javascript
-// Log a message in the 'app' log
-fileLogger('app', 'Application has started.');
+const logger = fileLogManager({
+  path: path.join(__dirname, '../logs'), // Customizable log directory path
+});
 
-// Log an error message in the 'errors' log
-fileLogger('errors', 'An unexpected error occurred.');
+// Example log entries
+logger('server', 'Server is up and running.');
+logger('database', 'Database connection established.');
+logger('auth', 'User logged in successfully.');
+logger('errors', 'Failed to fetch user data.');
 ```
-
-#### Example
-
-```javascript   
-const fileLogger = require('file-log-manager');
-
-fileLogger('server', 'Server is up and running.');
-fileLogger('database', 'Database connection established.');
-fileLogger('auth', 'User logged in successfully.');
-fileLogger('errors', 'Failed to fetch user data.');
-````
 
 #### How It Works
 
-`file-log-manager` takes care of the following tasks:
+`file-log-manager` is designed to provide a flexible logging solution with the following functionalities:
 
-- Directory Management: Creates a directory named after the specified log name inside a logs folder.
-- File Naming: Generates a log file with the current date (formatted as YYYY-MM-DD.log).
-- Message Formatting: Adds a timestamp to each log message to keep a precise record of when events occur.
-- Appending Logs: Writes log messages to the specified file, creating it if it doesn't exist.
+- Directory Management: Creates a directory named after the specified log category inside the configured logs folder.
+- File Naming: Generates a log file named with the current date (formatted as YYYY-MM-DD.log).
+- Message Formatting: Adds a timestamp to each log message for a precise record of when events occur.
+- Appending Logs: Writes and appends log messages to the specified file, creating it if it doesn't exist.
